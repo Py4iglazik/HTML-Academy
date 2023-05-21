@@ -38,3 +38,16 @@ for (let i = 1; i <= days; i++) {
   }
 }
 console.log(total);
+
+//Четвёртая программа/
+let initialWeight = 6000; // Исходный вес в граммах
+let targetWeight = 5000; // Желанный вес в граммах
+let days = 0;
+
+while (initialWeight > targetWeight) {
+  let oneDayLose = initialWeight/100*5;
+  initialWeight -= oneDayLose;
+  days++;
+};
+
+console.log(days);
