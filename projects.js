@@ -71,3 +71,39 @@ for (let i = 0; i < encodedSymbols.length; i++) {
 let decodedMessage = array.join("");
 
 console.log(decodedMessage);
+
+//Шестая программа.
+let qualificationDistance = 200;
+let attempts = [120, 150, 160, 201, 203, 180, 202];
+let qualified = false;
+let averageBest = 0;
+
+//Сортируем массив.
+for (let i = 0; i < attempts.length; i++) {
+  let minValue = attempts[i];
+  for (let j = i + 1; j < attempts.length; j++) {
+    if (minValue > attempts[j]) {
+      minValue = attempts[j];
+      let swap = attempts[i];
+      attempts[i] = minValue;
+      attempts[j] = swap;
+    }
+  }
+}
+console.log(attempts);
+
+//Находим среднее значение из 3-х лучших.
+let sumBest = 0;
+for (let k = attempts.length - 3; k < attempts.length; k++) {
+  sumBest += attempts[k];
+}
+averageBest = sumBest/3;
+console.log(averageBest);
+
+//Сравниваем 
+if (averageBest > qualificationDistance) {
+  qualified = true;
+} else {
+  qualified = false;
+}
+console.log(qualified);
