@@ -107,3 +107,14 @@ if (averageBest > qualificationDistance) {
   qualified = false;
 }
 console.log(qualified);
+
+//Седьмая программа.
+let percent;
+let calculateSalary = function (dirtySalary) {
+  if (dirtySalary >= 100000) {
+    percent = 0.45;
+  } else {
+    percent = 0.35;
+  }
+  return dirtySalary - (dirtySalary*percent);
+};
