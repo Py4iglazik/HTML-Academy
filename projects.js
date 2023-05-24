@@ -118,3 +118,21 @@ let calculateSalary = function (dirtySalary) {
   }
   return dirtySalary - (dirtySalary*percent);
 };
+
+//Восьмая программа.
+let getPrice = function(time, isProjectStrict) {
+  
+  let rate = 1500;
+  
+    if (isProjectStrict) {
+    time /= 2;
+    rate *= 2.5;
+    }
+    if (time > 150) {
+    rate -= 250;
+    }
+  
+  let price = time * rate;
+  
+  return price;
+};
