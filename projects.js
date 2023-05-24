@@ -136,3 +136,40 @@ let getPrice = function(time, isProjectStrict) {
   
   return price;
 };
+
+//Девятая программа.
+let playerOne = {
+  name: "Ilia",
+  goals: 10,
+  passes: 10
+};
+
+let playerTwo = {
+  name: "Bob", 
+  goals: 40, 
+  passes: 5
+};
+
+let listOfPlayers = [playerOne, playerTwo];
+
+let getStatistics = function (players) {
+
+  let goals = 0;
+  for (let i = 0; i < players.length; i++) {
+      goals += players[i].goals;
+  }
+
+  for (let j = 0; j < players.length; j++) {
+      let percent = Math.round((players[j].goals/goals)*100);
+      let coefficient = players[j].goals * 2 + players[j].passes;
+
+      listOfPlayers[j].coefficient = coefficient;
+      listOfPlayers[j].percent = percent;
+
+  }
+
+  return players;
+
+};
+
+console.log(getStatistics(listOfPlayers));
