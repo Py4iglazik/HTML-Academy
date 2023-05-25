@@ -173,3 +173,28 @@ let getStatistics = function (players) {
 };
 
 console.log(getStatistics(listOfPlayers));
+
+//Десятая программа.
+let materialPrice = {
+  'wood': 1000,
+  'stone': 1500,
+  'brick': 2000
+};
+
+  let house = {
+
+    rooms: 10,
+    floors: 5,
+    material: 'wood',
+    coefficient: 10.5,
+
+    calculateSquare: function() {
+    let square = this.rooms * this.coefficient * this.floors;
+    return square
+    },
+  
+    calculatePrice: function() {
+    let price = this.calculateSquare() * materialPrice[this.material];
+    return price
+    }
+  }
