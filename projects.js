@@ -198,3 +198,50 @@ let materialPrice = {
     return price
     }
   }
+
+//Одиннадцатая программа.
+var assortmentData = [
+  {
+    inStock: true,
+    isHit: false
+  },
+  {
+    inStock: false,
+    isHit: false
+  },
+  {
+    inStock: true,
+    isHit: true
+  },
+  {
+    inStock: true,
+    isHit: false
+  },
+  {
+    inStock: false,
+    isHit: false
+  }
+];
+
+var updateCards = function(iceCreams) {
+
+    var creams = document.querySelectorAll('.good');
+
+    for (var i = 0; i < creams.length; i++) {
+
+    var cream = creams[i];
+    var iceCream = iceCreams[i];
+    var notInStock = 'good--available';
+
+    if (!iceCream.inStock) {
+       notInStock = 'good--unavailable';
+    }
+
+    cream.classList.add(notInStock);
+    if (iceCream.isHit) {
+      cream.classList.add('good--hit');
+    }
+    
+  }
+}
+updateCards(assortmentData);
